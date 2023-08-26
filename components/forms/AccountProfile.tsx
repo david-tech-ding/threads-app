@@ -24,7 +24,6 @@ import { useUploadThing } from '@/lib/uploadthing'
 
 interface Props {
   user:{
-
    id: string;
     objectId: string;
     username: string;
@@ -62,7 +61,9 @@ const AccountProfile = ({user, btnTitle} : Props) => {
             values.profile_photo = imgRes[0].fileUrl;
         }
       }
-      }
+
+
+    }
     
       const handleImage = (e: ChangeEvent<HTMLInputElement>, fieldChange: (value: string) => void ) => {
         e.preventDefault()
