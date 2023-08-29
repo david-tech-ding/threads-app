@@ -128,3 +128,32 @@ export async function fetchUsers({
     throw new Error(`Error fetching users: ${error.message}`);
   }
 }
+
+export async function fetchActivity(userId: string) {
+  try {
+    connectToDB();
+
+    //Store all user threads created by user in an array
+    const userThreads = await Thread.find({ author: userId });
+
+    //Collect all thread ids which represents the replies, then concatenate all the existing arrays of replies
+    const childThreadIds = userThreads.reduce((acc, userThread) => {
+      return acc.concat(userThread.children);
+    }, []);
+
+    //Access all replies excluding the currently logged in user (user who is searching)
+    const replies = await Thread.find({
+      _id: { $in: childThreadIds },
+      author: { $ne: userId }, // Exclude threads authored by the same user
+    }).populate({
+      path: 'author',
+      model: User,
+      select: 'name image _id',
+    });
+
+    return replies;
+  } catch (error) {
+    console.error('Error fetching replies: ', error);
+    throw error;
+  }
+}

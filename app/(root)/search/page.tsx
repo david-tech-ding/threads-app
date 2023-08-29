@@ -1,9 +1,6 @@
-import ThreadCard from '@/components/cards/ThreadCard';
-import { fetchThreadById } from '@/lib/action/thread.action';
 import { fetchUser, fetchUsers } from '@/lib/action/user.action';
 import { currentUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
-import Comment from '@/components/forms/Comment';
 import UserCard from '@/components/cards/UserCard';
 
 const Page = async () => {
