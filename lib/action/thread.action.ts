@@ -118,7 +118,7 @@ export async function addCommentToThread(
     const commentThread = new Thread({
       text: commentText,
       author: userId,
-      parentId: threadId,
+      parentId: originalThread._id,
     });
 
     //save new thread
