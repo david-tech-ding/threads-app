@@ -1,34 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Mock Threads App
+
+A full-stack MERN Threads application built using TypeScript and Express. It allows users to create and manage threads for discussions, and also to join communities to share relevant threads.
+
+## Features
+
+- User authentication and registration with Clerk.
+- Handle file uploads with UploadThing.
+- Create, read, update, and delete threads.
+- Reply to threads.
+- Join communities.
+- View your activities.
+- Search for users of threads.
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js and npm installed on your machine.
+- MongoDB server running locally or accessible via a URL.
 
 ## Getting Started
 
-First, run the development server:
+# 1. Clone the repository:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+   git clone [https://github.com/yourusername/threads-app.git](https://github.com/david-tech-ding/threads-app.git)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 2. Install the project dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Navigate to the project folder `cd threads-app`.
+- Run `npm install`.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Create a .env.local file in the project root and add the following environment variables:
 
-## Learn More
+- MONGODB_URI=your_mongodb_connection_string
+- NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_key
+- UPLOADTHING_SECRET=your_upload_thing_secret
 
-To learn more about Next.js, take a look at the following resources:
+## Run the deployment server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Run command `npm run dev`. Then navigate to the localhost on your browser.
+  
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Register a new account with Clerk or log in using an existing account. If you are creating a new account, you will be prompted to complete an onboarding page.
+- Start by creating a new thread by clicking on the 'Create Thread' button.
+- Explore other features such as Search, Activities, amnd Communities.
+- View your own profile page where you can see your biography, your threads, replies, and threads you are tagged in.
+- Delete your own threads by clicking on the 'Bin' button.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Built with
+- Next.js
+- React.js
+- Express.js
+- MongoDB
+- TypeScript
+- Tailwind CSS
